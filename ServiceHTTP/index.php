@@ -1,4 +1,7 @@
 <?php
+//Autorise certains sites (içi tous) à faire des requetes ross domain
+header("Access-Control-Allow-Origin: * ");
+
 require "flight/Flight.php";
 
 Flight::route ("/api", function(){
@@ -50,5 +53,7 @@ Flight::route ("/api/villesfr", function(){
         $result = $prep -> fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($result);
 });
+
+
 
 Flight::start();
