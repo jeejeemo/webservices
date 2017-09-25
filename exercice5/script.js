@@ -1,21 +1,25 @@
+$('form').submit(function(event){
+    event.preventDefault();
 
-// $.ajax({
-//     url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&page=Accueil_principal",
-//     method:"get",
-//     success: function ( data){
-//         console.log(data)
-//     },
-//     error: function(error){
+    $.ajax({
+        url:"http://localhost/webservices/ServiceHTTP/api/formconnect",
+        method: "get",
+        dataType:"json",
+        data:{
 
-//         console.log( error );
-//     },
-
-
-// });
-
-function mafunction( data ){
-    $("body").html( data.parse.text['*'] );
-}
-
-
-
+            pseudo:"pseudo",
+            motdepasse:"password"
+        },
+        success : function(data){
+            console.log(data)
+            if(data != false){
+                
+        }
+            
+            
+        },
+        error: function(error){
+            // console.log(error)
+        }
+    })
+})
