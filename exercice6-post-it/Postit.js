@@ -1,7 +1,7 @@
-class Note {
+class Postit {
 
-    constructor( title, content, date ) {
-
+    constructor( title, content, date = new Date ) {
+        this.id = 0,
         this.title = title;
         this.content = content;
         this.date = date;

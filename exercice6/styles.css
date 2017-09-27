@@ -29,7 +29,7 @@ body {
 .post-it {
     position: relative;
     margin: 10px;
-    background-color: #F9FD00;
+    background-color: #fff;
     width : 200px;
     height: 180px;
     text-align: center;
@@ -46,6 +46,13 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+
+#create {
+    position: fixed;
+    right: 80px;
+    bottom: 20px;
+    display: none;
+}
 #detail {
     position: absolute;
     z-index: 2;
@@ -56,13 +63,6 @@ body {
     left: 50%;
     margin-top: -56px;
     margin-left: -97px;
-    display: none;
-}
-
-form {
-    position: fixed;
-    right: 80px;
-    bottom: 20px;
     display: none;
 }
 #title {
