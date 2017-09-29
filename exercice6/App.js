@@ -25,8 +25,8 @@ class App {
         this.$content.val("");
     }
 
-    addNote( postir ){
-        this.postits.push( postit );
+    addNote( note ){
+        this.notes.push( note );
     }
 
     saveNote( note ){
