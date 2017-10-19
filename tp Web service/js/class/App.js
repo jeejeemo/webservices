@@ -56,24 +56,28 @@ class App {
         }
 
         saveEven(){
-            var evenJson = JSON.stringify( this.evenements );
-            localStorage.setItem("events", evenJson);
+            // var evenJson = JSON.stringify( this.evenements );
+            // localStorage.setItem("events", evenJson);
+            
         }
 
         readEven(){
-            var evenJson = localStorage.getItem( 'events' );
-            var evens = JSON.parse (evenJson);
-
-            if(!evens){
-                return;
-            }
+            var that = this ;
+            $.ajax({
+                url : "http://localhost/APITP/events",
+                method : "get",
+                dataType : "json",
+                success: function ( data ){
+                    for( var data_even of evens){
+                        var even= new Evenement (data_even.title, data_even.description,new Date(data_even.datedebut),new Date(data_even.datefin));
+                        even.id = data_even.id;
+                        that.addEvenement(even);
+                        even.displayNot();
+                        
+                    }
+                }
             
-            for( var evenObject of evens){
-                var even= new Evenement (evenObject.title, evenObject.description,new Date(evenObject.datedebut),new Date(evenObject.datefin));
-                even.displayNot();
-                this.addEvenement(even);
-            }
-
+          
         }
         searchEvenDay(){
             for(var even of this.evenements ){

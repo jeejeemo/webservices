@@ -1,6 +1,6 @@
 $("#connection").submit(function( event ){ //$("#submit").click
 
-    event.preventDefault();
+    event.preventDefault();//Annule l'évènement s'il est annulable, sans stopper sa propagation.
 
     var username = $("#username").val();
     var password = $("#password").val();

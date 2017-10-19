@@ -21,5 +21,5 @@ $('form').submit(function(event){
         error: function(error){
             // console.log(error)
         }
-    })
-})
+    });
+}
